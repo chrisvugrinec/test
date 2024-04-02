@@ -29,7 +29,7 @@
             "value": "<serverFarmResourceId>"
           },
           "location": {
-            "value": "[parameters('location')]]"
+            "value": "[parameters('location')]"
           },
           "siteConfig": {
             "value": {
