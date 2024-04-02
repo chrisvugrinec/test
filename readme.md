@@ -8,4 +8,5 @@ The Bicep modules are converted to ARM templates and made available with the but
 | Description | Template |
 |---|---|
 | Deploy App Service Environment |[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#blade/Microsoft_Azure_CreateUIDef/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fchrisvugrinec%2Ftest%2Fmaster%2F%2Fcontainerappenv.json/uiFormDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fchrisvugrinec%2Ftest%2Fmaster%2FuiDefinition.json)|
+| Deploy Container App Service  |[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#blade/Microsoft_Azure_CreateUIDef/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fchrisvugrinec%2Ftest%2Fmaster%2F%2Fcontainerapp.json/uiFormDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Fchrisvugrinec%2Ftest%2Fmaster%2FuiDefinitionApp.json)|
    

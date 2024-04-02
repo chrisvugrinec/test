@@ -11,10 +11,13 @@
   "parameters" : {
     "location": {
       "type": "string",
-      "defaultValue": "westeurope",
-      "metadata": {
-        "description": "Location for all resources."
-      }
+      "defaultValue": "westeurope"
+    },
+    "envId" : {
+      "type" : "string"
+    }
+    "name" : {
+      "type" : "string"
     }
   },
   "resources": [
@@ -41,10 +44,10 @@
             ]
           },
           "environmentId": {
-            "value": "/subscriptions/166a5e45-8f0d-4fa7-a28d-df08b5e86218/resourceGroups/rg-cbloxbuildinf-vms/providers/Microsoft.App/managedEnvironments/amemin001"
+            "value": "[parameters('envId')]"
           },
           "name": {
-            "value": "vuggiez"
+            "value": "[parameters('name')]"
           },
           "location": {
             "value": "[parameters('location')]"
