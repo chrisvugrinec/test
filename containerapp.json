@@ -50,7 +50,7 @@
             "value": "[parameters('name')]"
           },
           "location": {
-            "value": "[parameters('location')]"
+            "value": "[resourceGroup().location]"
           }
         },
         "template": {
