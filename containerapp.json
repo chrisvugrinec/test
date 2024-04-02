@@ -34,17 +34,17 @@
                 "image": "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest",
                 "name": "simple-hello-world-container",
                 "resources": {
-                  "cpu": "<cpu>",
+                  "cpu": "0.25",
                   "memory": "0.5Gi"
                 }
               }
             ]
           },
           "environmentId": {
-            "value": "<environmentId>"
+            "value": "/subscriptions/166a5e45-8f0d-4fa7-a28d-df08b5e86218/resourceGroups/rg-cbloxbuildinf-vms/providers/Microsoft.App/managedEnvironments/amemin001"
           },
           "name": {
-            "value": "acamin001"
+            "value": "vuggiez"
           },
           "location": {
             "value": "[parameters('location')]"
