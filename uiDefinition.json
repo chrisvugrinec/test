@@ -32,7 +32,6 @@
 		},
 		"outputs": {
 			"parameters": {
- 				"location": "[steps('basics').resourceScope.location.name]",
 				"name": "[steps('basics').name]",
 				"logAnalyticsWSId": "[steps('basics').logAnalyticsWSId]"
 
