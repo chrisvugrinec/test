@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2021-09-09/uiFormDefinition.schema.json",
+	"view": {
+		"kind": "Form",
+		"properties": {
+			"title": "Demo Vugrinec Container App deployment",
+			"steps": [
+				{
+					"name": "basics",
+					"label": "Basics",
+					"elements": [
+						{
+							"name": "resourceScope",
+							"type": "Microsoft.Common.ResourceScope",
+							"location": {
+								"resourceTypes": []
+							}
+						},
+						{
+							"name": "nameEnv",
+							"type": "Microsoft.Common.TextBox",
+							"label": "Name for the App Service Environment"
+						},
+						{
+							"name": "nameApp",
+							"type": "Microsoft.Common.TextBox",
+							"label": "Name of the ContainerApp"
+						},
+						{
+							"name": "logAnalWSID",
+							"type": "Microsoft.Common.TextBox",
+							"label": "Azure Resource ID of the LogAnalytics Workspace"
+						}
+					]
+				}
+			]
+		},
+		"outputs": {
+			"parameters": {
+				"nameEnv": "[steps('basics').nameEnv]",
+				"nameApp": "[steps('basics').nameApp]",
+				"logAnalWSID": "[steps('basics').logAnalWSID]"
+            },
+			"kind": "Subscription",                        
+			"subscriptionId": "[steps('basics').resourceScope.subscription.id]",
+			"location": "[steps('basics').resourceScope.location.name]"
+		}
+	}
+}
