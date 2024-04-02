@@ -8,6 +8,15 @@
       "templateHash": "13015389145467768637"
     }
   },
+  "parameters" : {
+    "location": {
+      "type": "string",
+      "defaultValue": "westeurope",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    }
+  },
   "resources": [
     {
       "type": "Microsoft.Resources/deployments",
@@ -38,7 +47,7 @@
             "value": "acamin001"
           },
           "location": {
-            "value": "<location>"
+            "value": "[parameters('location')]"
           }
         },
         "template": {
