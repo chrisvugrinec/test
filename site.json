@@ -11,12 +11,11 @@
   "parameters" : {
     "location": {
       "type": "string",
-      "defaultValue": "[deployment().location]",
+      "defaultValue": "westeurope",
       "metadata": {
-        "description": "Azure Region. Defualt = Deployment location"
+        "description": "Location for all resources."
       }
     }
-  }
   },
   "resources": [
     {
