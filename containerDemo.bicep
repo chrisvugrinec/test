@@ -8,7 +8,7 @@ module managedEnvironment 'br/public:avm/res/app/managed-environment:0.4.3' = {
   params: {
     // Required parameters
     logAnalyticsWorkspaceResourceId: logAnalWSID
-    name: nameEnv
+    name: toLower(nameEnv)
   }
 }
 
@@ -28,7 +28,7 @@ module containerApp 'br/public:avm/res/app/container-app:0.1.4' = {
       }
     ]
     environmentId: managedEnvironment.outputs.resourceId
-    name: nameApp
+    name: toLower(nameApp)
   }
 }
 

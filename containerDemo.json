@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.26.54.24096",
-      "templateHash": "16387309329595519522"
+      "templateHash": "7825949315712533745"
     }
   },
   "parameters": {
@@ -34,7 +34,7 @@
             "value": "[parameters('logAnalWSID')]"
           },
           "name": {
-            "value": "[parameters('nameEnv')]"
+            "value": "[toLower(parameters('nameEnv'))]"
           }
         },
         "template": {
@@ -332,7 +332,7 @@
               "type": "Microsoft.App/managedEnvironments",
               "apiVersion": "2023-05-01",
               "name": "[parameters('name')]",
-              "location": "[parameters('location')]",
+              "location": "[resourceGroup().location]",
               "tags": "[parameters('tags')]",
               "properties": {
                 "appLogsConfiguration": {
@@ -467,7 +467,7 @@
             "value": "[reference(resourceId('Microsoft.Resources/deployments', 'managedEnvironmentDeployment'), '2022-09-01').outputs.resourceId.value]"
           },
           "name": {
-            "value": "[parameters('nameApp')]"
+            "value": "[toLower(parameters('nameApp'))]"
           }
         },
         "template": {
