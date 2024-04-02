@@ -12,13 +12,13 @@
       "name" : {
         "type" : "string"
       },
-      "location" : {
-        "type" : "string"
-      }, 
       "logAnalyticsWSId" :{
         "type" : "string"
       }
     },
+	"variables" : {
+		"location" : "[resourceGroup().location]"
+	},
     "resources": [
       {
         "type": "Microsoft.Resources/deployments",
@@ -37,7 +37,7 @@
               "value": "[parameters('name')]"
             },
             "location": {
-              "value": "[parameters('location')]"
+              "value": "[variables('location')]"
             }
           },
           "template": {
@@ -306,7 +306,7 @@
                 "condition": "[parameters('enableTelemetry')]",
                 "type": "Microsoft.Resources/deployments",
                 "apiVersion": "2023-07-01",
-                "name": "[format('46d3xbcp.res.app-managedenvironment.{0}.{1}', replace('0.4.3', '.', '-'), substring(uniqueString(deployment().name, parameters('location')), 0, 4))]",
+                "name": "[format('46d3xbcp.res.app-managedenvironment.{0}.{1}', replace('0.4.3', '.', '-'), substring(uniqueString(deployment().name, resourceGroup().location, 0, 4))]",
                 "properties": {
                   "mode": "Incremental",
                   "template": {
@@ -335,7 +335,7 @@
                 "type": "Microsoft.App/managedEnvironments",
                 "apiVersion": "2023-05-01",
                 "name": "[parameters('name')]",
-                "location": "[parameters('location')]",
+                "location": "[variables('location')]",
                 "tags": "[parameters('tags')]",
                 "properties": {
                   "appLogsConfiguration": {
