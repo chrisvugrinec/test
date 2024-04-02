@@ -15,6 +15,16 @@
 							"location": {
 								"resourceTypes": []
 							}
+						},
+						{
+							"name": "name",
+							"type": "Microsoft.Common.TextBox",
+							"label": "Name"
+						},
+						{
+							"name": "logAnalyticsWSId",
+							"type": "Microsoft.Common.TextBox",
+							"label": "Log Analytics Workspace ID"
 						}
 					]
 				}
@@ -22,9 +32,12 @@
 		},
 		"outputs": {
 			"parameters": {
-				"location": "[steps('basics').resourceScope.location.name]"
+ 				"location": "[steps('basics').location]",
+				"name": "[steps('basics').name]",
+				"logAnalyticsWSId": "[steps('basics').logAnalyticsWSId]"
+
             },
-			"kind": "Subscription",
+			"kind": "Subscription",                        
 			"subscriptionId": "[steps('basics').resourceScope.subscription.id]",
 			"location": "[steps('basics').resourceScope.location.name]"
 		}
