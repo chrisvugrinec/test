@@ -11,11 +11,12 @@
   "parameters" : {
     "location": {
       "type": "string",
-      "defaultValue": "[resourceGroup().location]",
+      "defaultValue": "[deployment().location]",
       "metadata": {
-        "description": "Location for all resources."
+        "description": "Azure Region. Defualt = Deployment location"
       }
     }
+  }
   },
   "resources": [
     {
